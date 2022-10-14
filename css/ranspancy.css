@@ -2,7 +2,7 @@
 
 .layout_post>#post {
     /* 以下代表透明度为0.5 可以自行修改*/
-    background: rgba(255, 255, 255, .3);
+    background: rgba(255, 255, 255, .8);
 }
 
 
@@ -15,22 +15,12 @@
 .layout_post>#post,
 .read-mode .layout_post>#post {
     /* 以下代表透明度为0.5 */
-    background: rgba(255, 255, 255, .3);
+    background: rgba(255, 255, 255, .8);
 }
 
 
 /*侧边卡片的透明度 */
 
 :root {
-    --card-bg: rgba(255, 255, 255, .3);
-}
-
-#web_bg {
-    /* 背景图像的地址（url括号里）  */
-    background: url(https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/img2022-10-13.png
-);
-    /* 背景图像不重复 */
-    background-repeat: no-repeat;
-    /* 背景图像大小 */
-    background-size: cover;
+    --card-bg: rgba(255, 255, 255, .8);
 }
