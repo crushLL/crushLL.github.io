@@ -1,45 +1,26 @@
-#page-header #nav {
-    /* 以下代表透明度为0.5 */
-    background: transparent!important;
-}
+/* 文章页背景 */
 
-
-/*以下是封面图透明*/
-
-#page-header.full_page::before {
-    background-color: transparent!important;
-}
-
-
-/*文章页背景*/
-
-
-/*分类页面*/
-
-
-/*时间轴页面*/
-
-[data-theme=dark] .layout>#post,
-[data-theme=dark] .layout #page,
-[data-theme=dark] .layout #archive,
-[data-theme=dark] .layout>#category {
+.layout_post>#post {
     /* 以下代表透明度为0.5 可以自行修改*/
-    background: rgba(0, 0, 0, 0.9);
-}
-
-
-/*侧边栏页面*/
-
-[data-theme=dark] #aside-content .sticky_layout .card-widget,
-[data-theme=dark] #aside-content .card-widget {
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(255, 255, 255, .8);
 }
 
 
 /* 所有页面背景 */
 
-[data-theme=dark] #recent-posts>.recent-post-item,
-[data-theme=dark] .read-mode .layout_post>#post {
+#aside_content .card-widget,
+#recent-posts>.recent-post-item,
+.layout_page>div:first-child:not(.recent-posts),
+.layout_post>#page,
+.layout_post>#post,
+.read-mode .layout_post>#post {
     /* 以下代表透明度为0.5 */
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(255, 255, 255, .8);
+}
+
+
+/*侧边卡片的透明度 */
+
+:root {
+    --card-bg: rgba(255, 255, 255, .8);
 }
