@@ -54,25 +54,6 @@
     
     
     <entry>
-      <title>记一次没技术含量的sql注入(附带漏洞提交教程)</title>
-      <link href="/2022/11/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%B2%A1%E6%8A%80%E6%9C%AF%E5%90%AB%E9%87%8F%E7%9A%84sql%E6%B3%A8%E5%85%A5-%E9%99%84%E5%B8%A6%E6%BC%8F%E6%B4%9E%E6%8F%90%E4%BA%A4%E6%95%99%E7%A8%8B/"/>
-      <url>/2022/11/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%B2%A1%E6%8A%80%E6%9C%AF%E5%90%AB%E9%87%8F%E7%9A%84sql%E6%B3%A8%E5%85%A5-%E9%99%84%E5%B8%A6%E6%BC%8F%E6%B4%9E%E6%8F%90%E4%BA%A4%E6%95%99%E7%A8%8B/</url>
-      
-        <content type="html"><![CDATA[<h1 id="记一次没技术含量的SQL注入（附带漏洞提交教程）"><a href="#记一次没技术含量的SQL注入（附带漏洞提交教程）" class="headerlink" title="记一次没技术含量的SQL注入（附带漏洞提交教程）"></a>记一次没技术含量的SQL注入（附带漏洞提交教程）</h1><p>第一次写这种文章，写得不好的地方请见谅</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20221129191844.jpg"></p><p>首先用谷歌语法挑选幸运儿</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/20221130002603.png"></p><p>随便点进去一个站</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/20221130002614.png"></p><p>复制域名到爱站那里瞧一下</p><p>谷歌PR3，可以交补天，就是它了</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/20221130002723.png"></p><p>点进网站找存在id的地方</p><p>随手测一下</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/20221130002754.png"></p><p>好家伙直接报错</p><p>稳稳的sql注入</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/20221130002824.png"></p><p>没waf直接上心爱的Sqlmap</p><p>挖洞不规范，亲人两行泪</p><p>爆出库名就可以了</p><p>sqlmap命令：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u &quot;http://www.xxx.com&quot; --dbs --level 3 --batch</span><br></pre></td></tr></table></figure><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/20221130002853.png"></p><p>接下来就是交到补天</p><p>sql注入一般都是中危及以上</p><p>下面是提交流程</p><p>以我博客域名为例</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/20221130002940.png"></p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/20221130003027.png"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> web渗透 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>命令行版学生管理系统</title>
       <link href="/2022/10/24/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%89%88%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
       <url>/2022/10/24/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%89%88%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
