@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>CVE-2022-25099</title>
+      <link href="/2023/05/11/CVE-2022-25099/"/>
+      <url>/2023/05/11/CVE-2022-25099/</url>
+      
+        <content type="html"><![CDATA[<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><p>春秋云境：<a href="https://yunjing.ichunqiu.com/">https://yunjing.ichunqiu.com</a></p><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>WBCE CMS v1.5.2 &#x2F;language&#x2F;install.php 文件存在漏洞</p><h1 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h1><p>0x00 打开环境</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230511202516012.png" alt="image-20230511202516012"></p><p>0x01 访问后台路径 &#x2F;admin</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230511202556256.png" alt="image-20230511202556256"></p><p>0x02 使用弱口令登录后台 admin&#x2F;123456</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230511202640873.png" alt="image-20230511202640873"></p><p>0x03 漏洞位置在 Add-ons -&gt; Languages</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230511202834954.png" alt="image-20230511202834954"></p><p>0x04 上传一句话木马会被过滤 但可以直接执行命令</p><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> <span class="title function_ invoke__">system</span>(<span class="string">&#x27;cat /falg&#x27;</span>); <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230511203517977.png" alt="image-20230511203517977"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 漏洞复现 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 漏洞复现 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CVE-2022-30887</title>
       <link href="/2023/05/10/CVE-2022-30887/"/>
       <url>/2023/05/10/CVE-2022-30887/</url>
