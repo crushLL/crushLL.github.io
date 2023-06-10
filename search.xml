@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>CVE-2022-23880</title>
+      <link href="/2023/06/10/CVE-2022-23880/"/>
+      <url>/2023/06/10/CVE-2022-23880/</url>
+      
+        <content type="html"><![CDATA[<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><p>春秋云境：<a href="https://yunjing.ichunqiu.com/">https://yunjing.ichunqiu.com</a></p><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>taoCMS v3.0.2 文件管理处存在任意文件上传漏洞，攻击者可执行任意代码</p><h1 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h1><p>0x00 打开环境</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230610214355218.png" alt="image-20230610214355218"></p><p>0x01 在URL后面添加 &#x2F;admin 即可访问到后台页面</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230610214513468.png" alt="image-20230610214513468"></p><p>0x02 输入账号:admin 密码:tao 即可进入后台</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230610214608263.png" alt="image-20230610214608263"></p><p>0x03 点击其它管理下的文件管理</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230610214647269.png" alt="image-20230610214647269"></p><p>0x04 新建文件</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230610215009308.png" alt="image-20230610215009308"></p><p>0x05 点击编辑 写入一句话</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230610215036284.png" alt="image-20230610215036284"></p><p>0x06 访问文件</p><p><img src="https://blog-1258155859.cos.ap-guangzhou.myqcloud.com/image-20230610215108930.png" alt="image-20230610215108930"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 漏洞复现 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 漏洞复现 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CVE-2022-26201</title>
       <link href="/2023/05/16/CVE-2022-26201/"/>
       <url>/2023/05/16/CVE-2022-26201/</url>
